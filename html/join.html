@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Details | Avan IT</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="form-page-body">
+    <nav class="navbar">
+        <div class="logo">Avan IT</div>
+        <a href="index.html" class="back-link">Back to Home</a>
+    </nav>
+
+    <section class="form-section">
+        <div class="form-container">
+            <h2 class="form-title">Client Details</h2>
+            <form action="https://formspree.io/f/your-id" method="POST" class="metallic-form">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="text" name="company" placeholder="Company Name" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <select name="service" required class="form-select">
+                    <option value="" disabled selected>Service interested in</option>
+                    <option value="Cloud">Cloud Infrastructure</option>
+                    <option value="Software">Software Development</option>
+                    <option value="Staffing">IT Staffing</option>
+                </select>
+                <textarea name="project_details" placeholder="Project Details" rows="6" required></textarea>
+                <button type="submit" class="submit-btn">Send Details via Mail</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
