@@ -3,180 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avan IT Solutions | Premium Tech Architecture</title>
+    <title>Avan IT Solutions | Premium Technology Architecture</title>
     
+    <!-- Meta Tags for SEO & Social -->
+    <meta name="description" content="Avan IT Solutions – Premium technology architecture, cloud engineering, and global staffing. We deliver bespoke software, cloud migration, and top-tier technical talent.">
+    <meta name="keywords" content="IT solutions, cloud architecture, software development, staffing, technology, Avan">
+    <meta name="author" content="Avan IT">
+    <meta property="og:title" content="Avan IT Solutions">
+    <meta property="og:description" content="The Apex of Digital Architecture">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
-    
-    <style>
-        /* --- PREMIUM COLOR PALETTE --- */
-        :root {
-            --pure-black: #000000;
-            --metallic-dark: #0a0a0a;
-            --border-gray: #1a1a1a;
-            --text-main: #ffffff;
-            --text-muted: #888888;
-            
-            /* Accent Colors */
-            --gold-premium: #d4af37;
-            --neon-green: #39ff14;
-            --deep-red: #d90429;
-            --cyber-orange: #ff6700;
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--pure-black); color: var(--text-main); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+    <!-- Chart.js for Performance Chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-        /* Pure Metallic Gradient */
-        .metallic-bg { 
-            background: linear-gradient(145deg, #050505 0%, #000000 50%, #080808 100%); 
-            position: relative;
-        }
-
-        /* --- NAVBAR --- */
-        .navbar {
-            position: fixed; top: 0; width: 100%; padding: 20px 5%; 
-            background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(15px);
-            z-index: 1000; display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 1px solid var(--border-gray);
-        }
-        .logo { display: flex; align-items: center; gap: 10px; }
-        .logo-icon { 
-            background: #000; color: var(--gold-premium); padding: 5px 10px; 
-            border: 1px solid var(--gold-premium); box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
-            font-weight: 900; font-size: 12px; letter-spacing: 2px;
-        }
-        .logo-text { font-size: 20px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase;}
-        
-        .nav-links { display: none; }
-        @media (min-width: 768px) { .nav-links { display: flex; gap: 40px; } }
-        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s; }
-        .nav-links a:hover, .nav-links a.active { color: var(--gold-premium); }
-        
-        /* Connected to join.html */
-        .nav-btn { 
-            background: var(--deep-red); color: #fff; padding: 12px 30px; 
-            text-decoration: none; font-weight: 900; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
-            border: 1px solid var(--deep-red); transition: all 0.3s;
-        }
-        .nav-btn:hover { background: #000; color: var(--deep-red); box-shadow: 0 0 15px rgba(217, 4, 41, 0.4); }
-
-        /* --- HERO SECTION --- */
-        .hero-wrapper { height: 160vh; }
-        .hero-sticky-container {
-            position: sticky; top: 0; height: 100vh;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            overflow: hidden; z-index: 1; text-align: center;
-        }
-        
-        .main-title { 
-            font-size: clamp(40px, 8vw, 100px); font-weight: 900; letter-spacing: -2px; line-height: 1; z-index: 10; 
-            /* Silver/Metallic Text Gradient */
-            background: linear-gradient(to bottom, #ffffff, #888888);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            transition: all 0.6s ease; 
-        }
-        .hero-subtitle { color: var(--text-muted); font-size: 16px; letter-spacing: 3px; text-transform: uppercase; margin-top: 30px; transition: opacity 0.4s; }
-
-        /* Flying Words with Specific Colors */
-        .pop-word {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.8);
-            background: rgba(0, 0, 0, 0.9); border: 1px solid var(--border-gray);
-            padding: 20px 30px; font-weight: 900; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; color: #fff;
-            opacity: 0; transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
-            display: flex; align-items: center; gap: 15px;
-        }
-        
-        /* Activating the words via JS */
-        #word1.active { top: 25%; left: 20%; opacity: 1; transform: translate(-50%, -50%) scale(1); border-color: var(--neon-green); box-shadow: 0 0 20px rgba(57, 255, 20, 0.1); }
-        #word2.active { top: 25%; left: 80%; opacity: 1; transform: translate(-50%, -50%) scale(1); border-color: var(--gold-premium); box-shadow: 0 0 20px rgba(212, 175, 55, 0.1); }
-        #word3.active { top: 75%; left: 20%; opacity: 1; transform: translate(-50%, -50%) scale(1); border-color: var(--deep-red); box-shadow: 0 0 20px rgba(217, 4, 41, 0.1); }
-        #word4.active { top: 75%; left: 80%; opacity: 1; transform: translate(-50%, -50%) scale(1); border-color: var(--cyber-orange); box-shadow: 0 0 20px rgba(255, 103, 0, 0.1); }
-
-        /* --- TECH MARQUEE --- */
-        .tech-section { background: var(--pure-black); padding: 80px 0; border-top: 1px solid var(--border-gray); border-bottom: 1px solid var(--border-gray); }
-        .tech-rolling-container { width: 100%; overflow: hidden; white-space: nowrap; }
-        .rolling-track { display: inline-flex; gap: 40px; animation: roll 35s linear infinite; padding-left: 40px; }
-        
-        .tech-card {
-            background: var(--metallic-dark); border: 1px solid var(--border-gray);
-            padding: 25px 50px; display: flex; align-items: center; gap: 20px;
-            transition: all 0.4s ease; filter: grayscale(100%); opacity: 0.6;
-        }
-        .tech-card img { height: 40px; width: auto; object-fit: contain; }
-        .tech-card span { font-weight: 900; font-size: 18px; letter-spacing: 2px; color: #fff; }
-        
-        /* Colorful Hover States */
-        .tech-card:hover { filter: grayscale(0%); opacity: 1; transform: translateY(-5px); }
-        .tech-card.aws:hover { border-color: var(--cyber-orange); box-shadow: 0 0 25px rgba(255, 103, 0, 0.2); }
-        .tech-card.react:hover { border-color: var(--neon-green); box-shadow: 0 0 25px rgba(57, 255, 20, 0.2); }
-        .tech-card.sap:hover { border-color: var(--gold-premium); box-shadow: 0 0 25px rgba(212, 175, 55, 0.2); }
-
-        @keyframes roll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-        /* --- CORE EXPERTISE --- */
-        .expertise-section { padding: 120px 5%; text-align: center; background: var(--pure-black); }
-        .section-title { font-size: 14px; font-weight: 900; letter-spacing: 5px; color: var(--gold-premium); text-transform: uppercase; margin-bottom: 60px; }
-        
-        .expertise-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; max-width: 1200px; margin: 0 auto; }
-        .card {
-            background: var(--metallic-dark); border: 1px solid var(--border-gray);
-            padding: 60px 40px; flex: 1; min-width: 320px; text-align: center; transition: all 0.4s ease;
-        }
-        .card h3 { font-size: 22px; font-weight: 900; margin-bottom: 20px; letter-spacing: 1px; color: #fff; }
-        .card p { color: var(--text-muted); line-height: 1.8; font-size: 14px; }
-        .card:hover { border-color: #555; background: #111; }
-
-        /* --- BOTTOM CTA BUTTON --- */
-        .cta-btn {
-            display: inline-block;
-            background: #ffffff; 
-            color: var(--pure-black);
-            padding: 20px 60px; 
-            text-decoration: none;
-            font-weight: 900; 
-            font-size: 14px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            border: 1px solid #ffffff;
-            transition: all 0.4s ease;
-        }
-        
-        .cta-btn:hover { 
-            background: var(--deep-red); 
-            color: #ffffff; 
-            border-color: var(--deep-red);
-            box-shadow: 0 0 30px rgba(217, 4, 41, 0.4);
-            letter-spacing: 6px;
-        }
-
-        footer { padding: 40px; text-align: center; border-top: 1px solid var(--border-gray); color: var(--text-muted); font-size: 12px; letter-spacing: 2px; font-weight: 700; text-transform: uppercase; background: var(--pure-black); }
-    </style>
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <nav class="navbar" id="navbar">
+    <!-- Navbar (with hamburger) -->
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
         <div class="logo">
             <span class="logo-icon">AVAN</span>
             <span class="logo-text">Avan IT</span>
         </div>
-        <div class="nav-links">
-            <a href="index.html" class="active">Platform</a>
-            <a href="#">Architecture</a>
-            <a href="#">Security</a>
+        <div class="hamburger" id="hamburger" aria-label="Toggle menu">☰</div>
+        <div class="nav-links" id="navLinks">
+            <a href="#platform">Platform</a>
+            <a href="#architecture">Architecture</a>
+            <a href="#security">Security</a>
+            <a href="#about">About</a>
+            <a href="#performance">Performance</a>
         </div>
-        <a href="join.html" class="nav-btn">Client Portal</a>
+        <a href="join.html" class="nav-btn" aria-label="Client Portal">Client Portal</a>
     </nav>
 
+    <!-- Hero Section with Flying Words -->
     <div class="hero-wrapper">
         <section class="hero-sticky-container metallic-bg">
-            
             <div class="hero-content">
                 <h1 class="main-title" id="center-title">AVAN IT<br>SOLUTIONS</h1>
                 <p class="hero-subtitle" id="hero-sub">The Apex of Digital Architecture</p>
             </div>
-            
+            <!-- Flying Words -->
             <div class="pop-word" id="word1"><span style="color: var(--neon-green)">01</span> Development</div>
             <div class="pop-word" id="word2"><span style="color: var(--gold-premium)">02</span> Implementation</div>
             <div class="pop-word" id="word3"><span style="color: var(--deep-red)">03</span> Support</div>
@@ -184,26 +61,29 @@
         </section>
     </div>
 
+    <!-- Tech Marquee -->
     <section class="tech-section">
         <div class="tech-rolling-container">
             <div class="rolling-track">
-                <div class="tech-card aws"><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS"><span>AWS</span></div>
-                <div class="tech-card react"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React"><span>REACT</span></div>
-                <div class="tech-card sap"><img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" alt="PostgreSQL"><span>POSTGRESQL</span></div>
-                <div class="tech-card aws"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker"><span>DOCKER</span></div>
-                <div class="tech-card react"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce"><span>SALESFORCE</span></div>
-                <div class="tech-card sap"><img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP"><span>SAP</span></div>
-                
-                <div class="tech-card aws"><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS"><span>AWS</span></div>
-                <div class="tech-card react"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React"><span>REACT</span></div>
-                <div class="tech-card sap"><img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" alt="PostgreSQL"><span>POSTGRESQL</span></div>
-                <div class="tech-card aws"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker"><span>DOCKER</span></div>
-                <div class="tech-card react"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce"><span>SALESFORCE</span></div>
-                <div class="tech-card sap"><img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP"><span>SAP</span></div>
+                <!-- Duplicate set for seamless loop -->
+                <div class="tech-card aws"><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS logo"><span>AWS</span></div>
+                <div class="tech-card react"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React logo"><span>REACT</span></div>
+                <div class="tech-card sap"><img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" alt="PostgreSQL logo"><span>POSTGRESQL</span></div>
+                <div class="tech-card aws"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker logo"><span>DOCKER</span></div>
+                <div class="tech-card react"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce logo"><span>SALESFORCE</span></div>
+                <div class="tech-card sap"><img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP logo"><span>SAP</span></div>
+                <!-- Duplicate -->
+                <div class="tech-card aws"><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS logo"><span>AWS</span></div>
+                <div class="tech-card react"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React logo"><span>REACT</span></div>
+                <div class="tech-card sap"><img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" alt="PostgreSQL logo"><span>POSTGRESQL</span></div>
+                <div class="tech-card aws"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker logo"><span>DOCKER</span></div>
+                <div class="tech-card react"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce logo"><span>SALESFORCE</span></div>
+                <div class="tech-card sap"><img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP logo"><span>SAP</span></div>
             </div>
         </div>
     </section>
 
+    <!-- Expertise Section -->
     <section class="expertise-section">
         <h2 class="section-title">Core Infrastructure</h2>
         <div class="expertise-grid">
@@ -220,52 +100,108 @@
                 <p>Direct access to top-tier technical talent, vetted strictly for advanced infrastructure and engineering roles.</p>
             </div>
         </div>
-        
-        <div style="margin-top: 80px;">
-            <a href="join.html" class="cta-btn">Initiate Project</a>
+    </section>
+
+    <!-- Platform Section (Anchor) -->
+    <section id="platform" class="content-section">
+        <div class="container">
+            <h2 class="section-title">Platform</h2>
+            <p>Our platform delivers scalable, secure, and innovative solutions tailored to your business needs. Leverage our expertise in cloud-native development, microservices, and API management.</p>
         </div>
     </section>
 
+    <!-- Architecture Section (Anchor) -->
+    <section id="architecture" class="content-section">
+        <div class="container">
+            <h2 class="section-title">Architecture</h2>
+            <p>We design robust, future-proof architectures using best-in-class tools like Kubernetes, Terraform, and serverless frameworks. Our approach ensures high availability and disaster recovery.</p>
+        </div>
+    </section>
+
+    <!-- Security Section (Anchor) -->
+    <section id="security" class="content-section">
+        <div class="container">
+            <h2 class="section-title">Security</h2>
+            <p>Security is at our core. We implement zero-trust models, continuous monitoring, and compliance with ISO 27001, GDPR, and SOC2 to protect your digital assets.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Avan</h2>
+            <div class="about-content">
+                <p class="about-text">Founded in 2020, Avan IT Solutions has rapidly grown into a trusted partner for enterprises seeking cutting-edge digital infrastructure. Our team of 50+ engineers, architects, and strategists operates globally, delivering bespoke software, cloud migration, and top-tier technical staffing. We combine Silicon Valley innovation with European precision to solve complex business challenges.</p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Experts</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">120+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Client Retention</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Section (with Chart) -->
+    <section id="performance" class="performance-section">
+        <div class="container">
+            <h2 class="section-title">Market Performance</h2>
+            <div class="chart-container">
+                <canvas id="stockChart"></canvas>
+            </div>
+            <p class="chart-note">*Illustrative data based on company growth trends</p>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <div style="text-align: center; margin: 60px 0;">
+        <a href="join.html" class="cta-btn">Initiate Project</a>
+    </div>
+
+    <!-- Footer -->
     <footer>
         &copy; 2026 Avan IT Solutions. System Active.
     </footer>
 
+    <!-- JavaScript -->
+    <script src="java/script.js"></script>
     <script>
-        window.addEventListener('scroll', function() {
-            const heroWrapper = document.querySelector('.hero-wrapper');
-            const w1 = document.getElementById("word1");
-            const w2 = document.getElementById("word2");
-            const w3 = document.getElementById("word3");
-            const w4 = document.getElementById("word4");
-            const title = document.getElementById("center-title");
-            const subtitle = document.getElementById("hero-sub");
-
-            let scrollPos = window.scrollY;
-
-            if (heroWrapper) {
-                let wrapperTop = heroWrapper.offsetTop;
-                let relativeScroll = scrollPos - wrapperTop;
-
-                if (relativeScroll > 100) {
-                    w1.classList.add("active");
-                    w2.classList.add("active");
-                    w3.classList.add("active");
-                    w4.classList.add("active");
-                    
-                    title.style.opacity = "0.05";
-                    title.style.transform = "scale(0.9)";
-                    subtitle.style.opacity = "0";
-                } else {
-                    w1.classList.remove("active");
-                    w2.classList.remove("active");
-                    w3.classList.remove("active");
-                    w4.classList.remove("active");
-                    
-                    title.style.opacity = "1";
-                    title.style.transform = "scale(1)";
-                    subtitle.style.opacity = "1";
+        // Initialize Chart.js for performance section
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('stockChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    datasets: [{
+                        label: 'Stock Price (USD)',
+                        data: [120, 135, 128, 145, 160, 155, 170, 185, 190, 200, 210, 225],
+                        borderColor: '#39ff14',
+                        backgroundColor: 'rgba(57, 255, 20, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { labels: { color: '#fff' } }
+                    },
+                    scales: {
+                        x: { ticks: { color: '#888' } },
+                        y: { ticks: { color: '#888' } }
+                    }
                 }
-            }
+            });
         });
     </script>
 </body>
