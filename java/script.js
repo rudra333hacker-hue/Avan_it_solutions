@@ -115,17 +115,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 scale: 1,
                 top: (el) => {
                     const id = el.id;
-                    if (id === 'word1') return '25%';
-                    if (id === 'word2') return '25%';
-                    if (id === 'word3') return '75%';
-                    if (id === 'word4') return '75%';
+                    if (id === 'word1' || id === 'word2') return '25%';
+                    return '75%';
                 },
                 left: (el) => {
                     const id = el.id;
-                    if (id === 'word1') return '20%';
-                    if (id === 'word2') return '80%';
-                    if (id === 'word3') return '20%';
-                    if (id === 'word4') return '80%';
+                    if (id === 'word1' || id === 'word3') return '20%';
+                    return '80%';
                 },
                 duration: 800,
                 easing: 'easeOutCubic',
@@ -188,3 +184,40 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 });
+
+// --- BULLETPROOF PRELOADER HIDE ---
+(function() {
+    // Get preloader element
+    const preloader = document.getElementById('preloader');
+    
+    // If preloader doesn't exist, stop
+    if (!preloader) {
+        console.warn('Preloader not found!');
+        return;
+    }
+
+    // Log for debugging
+    console.log('Preloader found. Will hide in 2 seconds.');
+
+    // Hide after 2 seconds
+    setTimeout(() => {
+        preloader.classList.add('hidden');
+        console.log('Preloader hidden class added.');
+
+        // Remove from DOM after transition (optional)
+        setTimeout(() => {
+            if (preloader.parentNode) {
+                preloader.remove();
+                console.log('Preloader removed from DOM.');
+            }
+        }, 1000); // matches CSS transition
+    }, 1500); // 1500ms = 1.5 seconds
+
+    // Fallback: If something goes wrong with the class, force hide after 3 seconds
+    setTimeout(() => {
+        if (!preloader.classList.contains('hidden')) {
+            preloader.style.display = 'none';
+            console.log('Preloader forcefully hidden (fallback).');
+        }
+    }, 3000);
+})();
