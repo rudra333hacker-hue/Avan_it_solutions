@@ -12,6 +12,20 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div id="preloader">
+        <div class="preloader-text">AVAN IT</div>
+    </div>
+
+    <script>
+        (function() {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                setTimeout(() => {
+                    preloader.classList.add('hidden');
+                }, 2000);
+            }
+        })();
+    </script>
     <canvas id="particle-canvas"></canvas>
     <nav class="navbar"> ... </nav>
 
