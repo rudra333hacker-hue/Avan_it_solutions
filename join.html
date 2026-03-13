@@ -3,134 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Client Inquiry | Avan IT Solutions</title>
-    <style>
-        /* --- METALLIC FORM STYLING --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%); 
-            color: #fff; 
-            font-family: 'Segoe UI', sans-serif; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .form-card {
-            width: 100%;
-            max-width: 650px;
-            background: #080808;
-            border: 1px solid #222;
-            padding: clamp(20px, 5vw, 50px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-        }
-
-        h2 { 
-            text-align: center; 
-            letter-spacing: 5px; 
-            margin-bottom: 40px; 
-            font-weight: 900;
-            font-size: clamp(20px, 4vw, 32px);
-            text-transform: uppercase;
-        }
-
-        label { 
-            color: #555; 
-            font-size: 10px; 
-            letter-spacing: 2px; 
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 15px;
-            margin: 8px 0 25px 0;
-            background: #000;
-            border: 1px solid #333;
-            color: #fff;
-            outline: none;
-            font-size: 16px;
-            border-radius: 0; /* Industrial sharp edges */
-        }
-
-        input:focus, textarea:focus { border-color: #fff; }
-
-        .submit-btn {
-            width: 100%;
-            padding: 20px;
-            background: #fff;
-            color: #000;
-            font-weight: 900;
-            border: none;
-            cursor: pointer;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-        }
-
-        .submit-btn:hover { 
-            background: #bbb; 
-            letter-spacing: 6px; 
-        }
-
-        .back-home { 
-            display: block; 
-            text-align: center; 
-            color: #444; 
-            text-decoration: none; 
-            margin-top: 30px; 
-            font-size: 12px; 
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-
-        .back-home:hover { color: #fff; }
-
-        /* Mobile specific spacing */
-        @media (max-width: 480px) {
-            .form-card { padding: 30px 20px; }
-        }
-    </style>
+    <title>Join Avan IT Solutions</title>
+    <meta name="description" content="Contact Avan IT Solutions for premium technology architecture and staffing.">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Navbar (same as index) -->
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="logo">
+            <span class="logo-icon">AVAN</span>
+            <span class="logo-text">Avan IT</span>
+        </div>
+        <div class="hamburger" id="hamburger" aria-label="Toggle menu">☰</div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html#platform">Platform</a>
+            <a href="index.html#architecture">Architecture</a>
+            <a href="index.html#security">Security</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#performance">Performance</a>
+        </div>
+        <a href="join.html" class="nav-btn" aria-label="Client Portal">Client Portal</a>
+    </nav>
 
-    <div class="form-card">
-        <h2>Client Details</h2>
-        
-        <form action="https://formspree.io/f/your-id" method="POST">
-            <input type="hidden" name="_next" value="success.html">
-            
-            <label>Full Name</label>
-            <input type="text" name="name" placeholder="Enter your name" required>
+    <!-- Join / Contact Form Section -->
+    <section class="join-section">
+        <div class="container">
+            <h1 class="join-title">Start Your Project</h1>
+            <p class="join-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
 
-            <label>Email Address</label>
-            <input type="email" name="email" placeholder="email@company.com" required>
+            <!-- Formspree Form (replace with your own endpoint) -->
+            <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST" class="join-form">
+                <input type="hidden" name="_redirect" value="http://127.0.0.1:3000/success.html"><!-- Update with your domain -->
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="company">Company (Optional)</label>
+                    <input type="text" id="company" name="company" placeholder="Your Company">
+                </div>
+                <div class="form-group">
+                    <label for="message">Project Details</label>
+                    <textarea id="message" name="message" rows="6" required placeholder="Tell us about your project..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Request</button>
+            </form>
+        </div>
+    </section>
 
-            <label>Company Name</label>
-            <input type="text" name="company" placeholder="Business name" required>
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 Avan IT Solutions. System Active.
+    </footer>
 
-            <label>Phone Number</label>
-            <input type="tel" name="phone" placeholder="+1..." required>
-
-            <label>Service Interest</label>
-            <select name="service">
-                <option value="Cloud">Cloud Infrastructure</option>
-                <option value="Software">Software Development</option>
-                <option value="Staffing">Staffing Solutions</option>
-            </select>
-
-            <label>Project Details</label>
-            <textarea name="details" rows="5" placeholder="Tell us about your project requirements..." required></textarea>
-
-            <button type="submit" class="submit-btn">Transmit Data</button>
-        </form>
-        
-        <a href="index.html" class="back-home">← Return to Dashboard</a>
-    </div>
-
+    <script src="java/script.js"></script>
 </body>
 </html>
