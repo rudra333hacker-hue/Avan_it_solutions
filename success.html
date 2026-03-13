@@ -3,77 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submission Successful | Avan IT</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            background: #000; 
-            color: #fff; 
-            font-family: 'Segoe UI', sans-serif; 
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .success-box {
-            border: 1px solid #222;
-            padding: clamp(40px, 8vw, 80px);
-            background: linear-gradient(135deg, #0a0a0a 0%, #000 100%);
-            max-width: 500px;
-            width: 100%;
-        }
-
-        .checkmark {
-            font-size: 80px;
-            margin-bottom: 20px;
-            color: #fff;
-            display: block;
-        }
-
-        h1 {
-            font-size: clamp(24px, 5vw, 40px);
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            font-weight: 900;
-        }
-
-        p {
-            color: #666;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        .home-btn {
-            display: inline-block;
-            background: #fff;
-            color: #000;
-            padding: 18px 45px;
-            text-decoration: none;
-            font-weight: 900;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
-
-        .home-btn:hover {
-            background: #bbb;
-            letter-spacing: 5px;
-        }
-    </style>
+    <title>Thank You | Avan IT Solutions</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Navbar (same) -->
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="logo">
+            <span class="logo-icon">AVAN</span>
+            <span class="logo-text">Avan IT</span>
+        </div>
+        <div class="hamburger" id="hamburger" aria-label="Toggle menu">☰</div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html#platform">Platform</a>
+            <a href="index.html#architecture">Architecture</a>
+            <a href="index.html#security">Security</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#performance">Performance</a>
+        </div>
+        <a href="join.html" class="nav-btn" aria-label="Client Portal">Client Portal</a>
+    </nav>
 
-    <div class="success-box">
-        <span class="checkmark">✓</span>
-        <h1>Data Received</h1>
-        <p>Your inquiry has been processed. Our technical team will reach out to your provided email within 24 hours.</p>
-        <a href="index.html" class="home-btn">Go Home</a>
-    </div>
+    <!-- Success Message -->
+    <section class="success-section">
+        <div class="container">
+            <div class="success-card">
+                <h1>Thank You!</h1>
+                <p>Your message has been sent successfully. Our team will contact you within 24 hours.</p>
+                <a href="index.html" class="cta-btn">Return to Home</a>
+            </div>
+        </div>
+    </section>
 
+    <footer>
+        &copy; 2026 Avan IT Solutions. System Active.
+    </footer>
+
+    <script src="java/script.js"></script>
 </body>
 </html>
