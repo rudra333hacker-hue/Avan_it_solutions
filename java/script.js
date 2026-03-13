@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('Preloader removed from DOM.');
             }
         }, 1000); // matches CSS transition
-    }, 1500); // 1500ms = 1.5 seconds
+    }, 2000); // 2000ms = 2 seconds
 
     // Fallback: If something goes wrong with the class, force hide after 3 seconds
     setTimeout(() => {
