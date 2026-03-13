@@ -29,9 +29,25 @@
 </head>
 <body>
     <!-- Preloader -->
-<div id="preloader">
-    <div class="preloader-text">AVAN IT</div>
-</div>
+    <div id="preloader">
+        <div class="preloader-text">AVAN IT</div>
+    </div>
+
+    <!-- SIMPLE INLINE SCRIPT TO HIDE PRELOADER AFTER 2 SECONDS -->
+    <script>
+        (function() {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                console.log('Preloader: will hide in 2s');
+                setTimeout(() => {
+                    preloader.classList.add('hidden');
+                    console.log('Preloader: hidden');
+                }, 2000);
+            } else {
+                console.log('Preloader: element not found');
+            }
+        })();
+    </script>
     <!-- Canvas for Particles (ReactBits-inspired) -->
     <canvas id="particle-canvas"></canvas>
 
