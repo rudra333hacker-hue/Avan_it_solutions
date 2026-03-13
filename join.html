@@ -9,35 +9,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navbar (same as index) -->
-    <nav class="navbar" aria-label="Main navigation">
-        <div class="logo">
-            <span class="logo-icon">AVAN</span>
-            <span class="logo-text">Avan IT</span>
-        </div>
-        <div class="hamburger" id="hamburger" aria-label="Toggle menu">☰</div>
-        <div class="nav-links" id="navLinks">
-            <a href="index.html#platform">Platform</a>
-            <a href="index.html#architecture">Architecture</a>
-            <a href="index.html#security">Security</a>
-            <a href="index.html#about">About</a>
-            <a href="index.html#performance">Performance</a>
-        </div>
-        <a href="join.html" class="nav-btn" aria-label="Client Portal">Client Portal</a>
-    </nav>
+    <canvas id="particle-canvas"></canvas>
+    <nav class="navbar"> ... </nav>
 
-    <!-- Join / Contact Form Section -->
     <section class="join-section">
         <div class="container">
             <h1 class="join-title">Start Your Project</h1>
             <p class="join-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
 
-            <!-- Formspree Form (replace with your own endpoint) -->
             <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST" class="join-form">
-                <input type="hidden" name="_redirect" value="http://127.0.0.1:3000/success.html"><!-- Update with your domain -->
+                <input type="hidden" name="_redirect" value="http://127.0.0.1:3000/success.html">
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" required placeholder="John Doe">
@@ -59,11 +44,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        &copy; 2026 Avan IT Solutions. System Active.
-    </footer>
-
-    <script src="java/script.js"></script>
+    <footer>...</footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
