@@ -161,3 +161,8 @@ body {
     display: flex; align-items: center; gap: 15px;
     /* Anime.js will handle the animation */
 }
+
+/* ... (rest of your existing CSS for flying words positions, tech marquee, cards, about, performance, join, success, footer) ... */
+
+/* I'll continue with the essential parts, but you can keep your previous CSS for layout. 
+   The key additions are above: particle canvas, shiny text, and underline animation. */
