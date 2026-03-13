@@ -183,6 +183,46 @@ document.addEventListener('DOMContentLoaded', function() {
         el.style.opacity = 0;
         observer.observe(el);
     });
+    // --- Preloader Interceptor for Same-Page Links ---
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Check if the link is aiming at a section on the current page
+            const targetPage = href.split('#')[0];
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const isSamePageAnchor = href.startsWith('#') || (targetPage === currentPage && href.includes('#'));
+
+            if (isSamePageAnchor) {
+                e.preventDefault(); // Stop the immediate jump
+                
+                const targetId = href.split('#')[1];
+                const preloader = document.getElementById('preloader');
+                
+                if (preloader) {
+                    // 1. Unhide the preloader overlay
+                    preloader.classList.remove('hidden');
+                    
+                    // 2. Restart the CSS text animation
+                    const text = preloader.querySelector('.preloader-text');
+                    if (text) {
+                        text.style.animation = 'none';
+                        void text.offsetWidth; // Force the browser to reset the element
+                        text.style.animation = 'introGlowExit 2s forwards ease-in-out';
+                    }
+
+                    // 3. Wait for the 2-second animation, scroll to section, and hide preloader
+                    setTimeout(() => {
+                        const targetSection = document.getElementById(targetId);
+                        if (targetSection) {
+                            window.scrollTo({ top: targetSection.offsetTop, behavior: 'instant' });
+                        }
+                        preloader.classList.add('hidden');
+                    }, 2000);
+                }
+            }
+        });
+    });
 });
 
 // --- BULLETPROOF PRELOADER HIDE ---
