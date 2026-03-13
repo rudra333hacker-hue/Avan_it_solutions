@@ -51,7 +51,7 @@ body {
     position: relative;
 }
 
-/* --- NAVBAR (unchanged, but ensure it's above canvas) --- */
+/* --- NAVBAR --- */
 .navbar {
     position: fixed; top: 0; width: 100%; padding: 20px 5%; 
     background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(15px);
@@ -132,7 +132,6 @@ body {
     letter-spacing: -2px;
     line-height: 1.1;
     z-index: 10;
-    /* Shiny text effect (ReactBits-inspired) */
     background: linear-gradient(135deg, #fff 0%, #888 25%, #fff 50%, #888 75%, #fff 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -159,10 +158,217 @@ body {
     padding: 20px 30px; font-weight: 900; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; color: #fff;
     opacity: 0;
     display: flex; align-items: center; gap: 15px;
-    /* Anime.js will handle the animation */
 }
 
-/* ... (rest of your existing CSS for flying words positions, tech marquee, cards, about, performance, join, success, footer) ... */
+/* --- TECH MARQUEE --- */
+.tech-section { 
+    background: var(--pure-black); padding: 80px 0; 
+    border-top: 1px solid var(--border-gray); border-bottom: 1px solid var(--border-gray); 
+}
+.tech-rolling-container { width: 100%; overflow: hidden; white-space: nowrap; }
+.rolling-track { display: inline-flex; gap: 40px; animation: roll 35s linear infinite; padding-left: 40px; }
 
-/* I'll continue with the essential parts, but you can keep your previous CSS for layout. 
-   The key additions are above: particle canvas, shiny text, and underline animation. */
+.tech-card {
+    background: var(--metallic-dark); border: 1px solid var(--border-gray);
+    padding: 25px 50px; display: flex; align-items: center; gap: 20px;
+    transition: all 0.4s ease; filter: grayscale(100%); opacity: 0.6;
+}
+.tech-card img { height: 40px; width: auto; object-fit: contain; }
+.tech-card span { font-weight: 900; font-size: 18px; letter-spacing: 2px; color: #fff; }
+
+.tech-card:hover { filter: grayscale(0%); opacity: 1; transform: translateY(-5px); }
+.tech-card.aws:hover { border-color: var(--cyber-orange); box-shadow: 0 0 25px rgba(255, 103, 0, 0.2); }
+.tech-card.react:hover { border-color: var(--neon-green); box-shadow: 0 0 25px rgba(57, 255, 20, 0.2); }
+.tech-card.sap:hover { border-color: var(--gold-premium); box-shadow: 0 0 25px rgba(212, 175, 55, 0.2); }
+
+@keyframes roll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* --- CORE EXPERTISE CARDS --- */
+.expertise-section { padding: 120px 5%; text-align: center; background: var(--pure-black); }
+.section-title { 
+    font-size: 14px; font-weight: 900; letter-spacing: 5px; color: var(--gold-premium); 
+    text-transform: uppercase; margin-bottom: 60px; 
+}
+
+.expertise-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; max-width: 1200px; margin: 0 auto; }
+.card {
+    background: var(--metallic-dark); border: 1px solid var(--border-gray);
+    padding: 60px 40px; flex: 1; min-width: 320px; text-align: center; transition: all 0.4s ease;
+}
+.card h3 { font-size: 22px; font-weight: 900; margin-bottom: 20px; letter-spacing: 1px; color: #fff; }
+.card p { color: var(--text-muted); line-height: 1.8; font-size: 14px; }
+.card:hover { border-color: #555; background: #111; }
+
+/* --- ABOUT & PERFORMANCE SECTIONS --- */
+.about-section, .performance-section {
+    padding: 100px 5%;
+    background: var(--pure-black);
+    border-top: 1px solid var(--border-gray);
+}
+
+.about-content { text-align: center; }
+.about-text {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: var(--text-muted);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--gold-premium);
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+}
+
+.chart-container {
+    max-width: 800px;
+    margin: 0 auto;
+    height: 400px;
+}
+
+.chart-note {
+    text-align: center;
+    color: #444;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+/* --- BOTTOM CTA BUTTON --- */
+.cta-btn {
+    display: inline-block; background: #ffffff; color: var(--pure-black);
+    padding: 20px 60px; text-decoration: none; font-weight: 900; font-size: 14px;
+    letter-spacing: 4px; text-transform: uppercase; border: 1px solid #ffffff; transition: all 0.4s ease;
+}
+.cta-btn:hover { 
+    background: var(--deep-red); color: #ffffff; border-color: var(--deep-red);
+    box-shadow: 0 0 30px rgba(217, 4, 41, 0.4); letter-spacing: 6px;
+}
+
+/* --- FOOTER --- */
+footer { 
+    padding: 40px; text-align: center; border-top: 1px solid var(--border-gray); 
+    color: var(--text-muted); font-size: 12px; letter-spacing: 2px; 
+    font-weight: 700; text-transform: uppercase; background: var(--pure-black); 
+}
+
+/* --- PAGE SPECIFIC CSS (join.html, platform.html, success.html) --- */
+.page-header {
+    padding: 150px 5% 50px;
+    text-align: center;
+    background: var(--metallic-dark);
+    border-bottom: 1px solid var(--border-gray);
+}
+.page-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: 20px;
+}
+.page-subtitle {
+    color: var(--text-muted);
+    font-size: 18px;
+}
+
+.content-detail { padding: 100px 5%; }
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.feature-item {
+    background: var(--pure-black);
+    border: 1px solid var(--border-gray);
+    padding: 40px;
+    transition: 0.3s;
+}
+.feature-item h3 {
+    color: var(--gold-premium);
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.join-section, .success-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 5%;
+}
+.join-title { text-align: center; margin-bottom: 10px; font-family: var(--font-heading); font-size: 3rem;}
+.join-subtitle { text-align: center; color: var(--text-muted); margin-bottom: 40px;}
+
+.join-form {
+    background: rgba(0,0,0,0.8);
+    border: 1px solid var(--border-gray);
+    padding: 40px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.form-group { margin-bottom: 20px; }
+.form-group label {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 15px;
+    background: var(--pure-black);
+    border: 1px solid #333;
+    color: #fff;
+    font-family: var(--font-body);
+}
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold-premium);
+}
+.submit-btn {
+    width: 100%;
+    background: var(--gold-premium);
+    color: #000;
+    padding: 18px;
+    border: none;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.submit-btn:hover {
+    background: #fff;
+}
+
+.success-card {
+    text-align: center;
+    background: rgba(0,0,0,0.8);
+    border: 1px solid var(--border-gray);
+    padding: 60px 40px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.success-card h1 { font-family: var(--font-heading); font-size: 3rem; margin-bottom: 20px; color: var(--neon-green);}
+.success-card p { color: var(--text-muted); margin-bottom: 40px;}
